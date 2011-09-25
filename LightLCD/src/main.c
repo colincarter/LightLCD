@@ -75,8 +75,6 @@ void update_text_display(void)
 
 int main(void)
 {
-    uint8_t x;
-
     // Initialize the board
     board_init();
     sysclk_init();
