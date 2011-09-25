@@ -23,6 +23,22 @@ static volatile uint8_t mode =  MODE_GRAPH;
 
 static uint8_t x = 0;
 
+static void clear_lcd(void)
+{
+    gfx_mono_draw_filled_rect(0, 0, GFX_MONO_LCD_WIDTH, GFX_MONO_LCD_HEIGHT, GFX_PIXEL_CLR);
+}
+
+static void setup_graph_display(void)
+{
+    clear_lcd();
+	x = 0;
+}
+
+static void setup_text_display(void)
+{
+    clear_lcd();
+}
+
 static void adc_handler(ADC_t *adc, uint8_t ch_mask, adc_result_t result)
 {
     scaled_light_reading = GFX_MONO_LCD_HEIGHT - (result / SCALED_LCD_HEIGHT);
@@ -66,15 +82,37 @@ void update_graph_display(void)
     x = (x >=  GFX_MONO_LCD_WIDTH) ? 0 : ++x;
 }
 
+struct button
+{
+	uint8_t button;
+	uint8_t direction;
+};
+
 void update_text_display(void)
 {
     
-    
 }
 
+void set_mode(struct button *b)
+{
+	if (gpio_pin_is_low(GPIO_PUSH_BUTTON_0))
+	{
+		
+	    mode = MODE_GRAPH;	
+		setup_graph_display();
+	}
+	
+	if (gpio_pin_is_low(GPIO_PUSH_BUTTON_1))
+	{
+		mode = MODE_TEXT;
+		setup_text_display();
+	}
+}
 
 int main(void)
 {
+	struct button button;
+		
     // Initialize the board
     board_init();
     sysclk_init();
@@ -90,6 +128,8 @@ int main(void)
 		
     while (1) 
     {
+		set_mode(&button);
+		
         if (mode == MODE_GRAPH)
             update_graph_display();
         else if (mode == MODE_TEXT)

@@ -49,76 +49,76 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>BOARD=XMEGA_A3BU_XPLAINED</Value>
-      <Value>CONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA</Value>
-      <Value>GFX_MONO_C12832_A1Z=1</Value>
-      <Value>CONFIG_ADC_CALLBACK_ENABLE</Value>
-    </ListValues>
-  </avrgcc.compiler.symbols.DefSymbols>
-  <avrgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
-      <Value>../src/asf/common/boards</Value>
-      <Value>../src/asf/common/services/gpio</Value>
-      <Value>../src/asf/common/utils</Value>
-      <Value>../src/asf/xmega/boards</Value>
-      <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
-      <Value>../src/asf/xmega/drivers/ioport</Value>
-      <Value>../src/asf/xmega/utils</Value>
-      <Value>../src/asf/xmega/utils/preprocessor</Value>
-      <Value>../src/config</Value>
-      <Value>../src/asf/xmega/drivers/cpu</Value>
-      <Value>../src/asf/xmega/drivers/pmic</Value>
-      <Value>../src/asf/xmega/drivers/nvm</Value>
-      <Value>../src/asf/xmega/drivers/usart</Value>
-      <Value>../src/asf/common/components/display/st7565r</Value>
-      <Value>../src/asf/common/services/gfx_mono</Value>
-      <Value>../src/asf/common/services/spi</Value>
-      <Value>../src/asf/common/services/clock</Value>
-      <Value>../src/asf/xmega/drivers/adc</Value>
-      <Value>../src/asf/xmega/drivers/sleep</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-    </ListValues>
-  </avrgcc.compiler.directories.IncludePaths>
-  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
-  <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
-  <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
-  <avrgcc.linker.optimization.RelaxBranches>True</avrgcc.linker.optimization.RelaxBranches>
-  <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--relax</avrgcc.linker.miscellaneous.LinkerFlags>
-  <avrgcc.assembler.general.AssemblerFlags>-mrelax -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DBOARD=XMEGA_A3BU_XPLAINED</avrgcc.assembler.general.AssemblerFlags>
-  <avrgcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
-      <Value>../src/asf/common/boards</Value>
-      <Value>../src/asf/common/services/gpio</Value>
-      <Value>../src/asf/common/utils</Value>
-      <Value>../src/asf/xmega/boards</Value>
-      <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
-      <Value>../src/asf/xmega/drivers/ioport</Value>
-      <Value>../src/asf/xmega/utils</Value>
-      <Value>../src/asf/xmega/utils/preprocessor</Value>
-      <Value>../src/config</Value>
-      <Value>../src/asf/xmega/drivers/cpu</Value>
-      <Value>../src/asf/xmega/drivers/pmic</Value>
-      <Value>../src/asf/xmega/drivers/nvm</Value>
-      <Value>../src/asf/xmega/drivers/usart</Value>
-      <Value>../src/asf/common/components/display/st7565r</Value>
-      <Value>../src/asf/common/services/gfx_mono</Value>
-      <Value>../src/asf/common/services/spi</Value>
-      <Value>../src/asf/common/services/clock</Value>
-      <Value>../src/asf/xmega/drivers/adc</Value>
-      <Value>../src/asf/xmega/drivers/sleep</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-    </ListValues>
-  </avrgcc.assembler.general.IncludePaths>
-</AvrGcc>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>BOARD=XMEGA_A3BU_XPLAINED</Value>
+            <Value>CONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA</Value>
+            <Value>GFX_MONO_C12832_A1Z=1</Value>
+            <Value>CONFIG_ADC_CALLBACK_ENABLE</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../src</Value>
+            <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
+            <Value>../src/asf/common/boards</Value>
+            <Value>../src/asf/common/services/gpio</Value>
+            <Value>../src/asf/common/utils</Value>
+            <Value>../src/asf/xmega/boards</Value>
+            <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/asf/xmega/drivers/ioport</Value>
+            <Value>../src/asf/xmega/utils</Value>
+            <Value>../src/asf/xmega/utils/preprocessor</Value>
+            <Value>../src/config</Value>
+            <Value>../src/asf/xmega/drivers/cpu</Value>
+            <Value>../src/asf/xmega/drivers/pmic</Value>
+            <Value>../src/asf/xmega/drivers/nvm</Value>
+            <Value>../src/asf/xmega/drivers/usart</Value>
+            <Value>../src/asf/common/components/display/st7565r</Value>
+            <Value>../src/asf/common/services/gfx_mono</Value>
+            <Value>../src/asf/common/services/spi</Value>
+            <Value>../src/asf/common/services/clock</Value>
+            <Value>../src/asf/xmega/drivers/adc</Value>
+            <Value>../src/asf/xmega/drivers/sleep</Value>
+            <Value>../src/asf/common/services/sleepmgr</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
+        <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+        <avrgcc.linker.optimization.RelaxBranches>True</avrgcc.linker.optimization.RelaxBranches>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--relax</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.AssemblerFlags>-mrelax -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DBOARD=XMEGA_A3BU_XPLAINED</avrgcc.assembler.general.AssemblerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>../src</Value>
+            <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
+            <Value>../src/asf/common/boards</Value>
+            <Value>../src/asf/common/services/gpio</Value>
+            <Value>../src/asf/common/utils</Value>
+            <Value>../src/asf/xmega/boards</Value>
+            <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/asf/xmega/drivers/ioport</Value>
+            <Value>../src/asf/xmega/utils</Value>
+            <Value>../src/asf/xmega/utils/preprocessor</Value>
+            <Value>../src/config</Value>
+            <Value>../src/asf/xmega/drivers/cpu</Value>
+            <Value>../src/asf/xmega/drivers/pmic</Value>
+            <Value>../src/asf/xmega/drivers/nvm</Value>
+            <Value>../src/asf/xmega/drivers/usart</Value>
+            <Value>../src/asf/common/components/display/st7565r</Value>
+            <Value>../src/asf/common/services/gfx_mono</Value>
+            <Value>../src/asf/common/services/spi</Value>
+            <Value>../src/asf/common/services/clock</Value>
+            <Value>../src/asf/xmega/drivers/adc</Value>
+            <Value>../src/asf/xmega/drivers/sleep</Value>
+            <Value>../src/asf/common/services/sleepmgr</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
     </ToolchainSettings>
     <MemorySettings />
     <GenerateHexFile>True</GenerateHexFile>
@@ -129,83 +129,83 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>GFX_MONO_C12832_A1Z=1</Value>
-      <Value>CONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA</Value>
-      <Value>BOARD=XMEGA_A3BU_XPLAINED</Value>
-      <Value>CONFIG_ADC_CALLBACK_ENABLE</Value>
-    </ListValues>
-  </avrgcc.compiler.symbols.DefSymbols>
-  <avrgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
-      <Value>../src/asf/common/boards</Value>
-      <Value>../src/asf/common/services/gpio</Value>
-      <Value>../src/asf/common/utils</Value>
-      <Value>../src/asf/xmega/boards</Value>
-      <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
-      <Value>../src/asf/xmega/drivers/ioport</Value>
-      <Value>../src/asf/xmega/utils</Value>
-      <Value>../src/asf/xmega/utils/preprocessor</Value>
-      <Value>../src/config</Value>
-      <Value>../src/asf/xmega/drivers/cpu</Value>
-      <Value>../src/asf/xmega/drivers/pmic</Value>
-      <Value>../src/asf/xmega/drivers/nvm</Value>
-      <Value>../src/asf/xmega/drivers/usart</Value>
-      <Value>../src/asf/common/components/display/st7565r</Value>
-      <Value>../src/asf/common/services/gfx_mono</Value>
-      <Value>../src/asf/common/services/spi</Value>
-      <Value>../src/asf/common/services/clock</Value>
-      <Value>../src/asf/xmega/drivers/adc</Value>
-      <Value>../src/asf/xmega/drivers/sleep</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-    </ListValues>
-  </avrgcc.compiler.directories.IncludePaths>
-  <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
-  <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
-  <avrgcc.compiler.optimization.DebugLevel>Maximum (-g3)</avrgcc.compiler.optimization.DebugLevel>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
-  <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
-  <avrgcc.linker.optimization.RelaxBranches>True</avrgcc.linker.optimization.RelaxBranches>
-  <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--relax</avrgcc.linker.miscellaneous.LinkerFlags>
-  <avrgcc.assembler.general.AssemblerFlags>-mrelax -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DBOARD=XMEGA_A3BU_XPLAINED</avrgcc.assembler.general.AssemblerFlags>
-  <avrgcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>../src</Value>
-      <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
-      <Value>../src/asf/common/boards</Value>
-      <Value>../src/asf/common/services/gpio</Value>
-      <Value>../src/asf/common/utils</Value>
-      <Value>../src/asf/xmega/boards</Value>
-      <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
-      <Value>../src/asf/xmega/drivers/ioport</Value>
-      <Value>../src/asf/xmega/utils</Value>
-      <Value>../src/asf/xmega/utils/preprocessor</Value>
-      <Value>../src/config</Value>
-      <Value>../src/asf/xmega/drivers/cpu</Value>
-      <Value>../src/asf/xmega/drivers/pmic</Value>
-      <Value>../src/asf/xmega/drivers/nvm</Value>
-      <Value>../src/asf/xmega/drivers/usart</Value>
-      <Value>../src/asf/common/components/display/st7565r</Value>
-      <Value>../src/asf/common/services/gfx_mono</Value>
-      <Value>../src/asf/common/services/spi</Value>
-      <Value>../src/asf/common/services/clock</Value>
-      <Value>../src/asf/xmega/drivers/adc</Value>
-      <Value>../src/asf/xmega/drivers/sleep</Value>
-      <Value>../src/asf/common/services/sleepmgr</Value>
-    </ListValues>
-  </avrgcc.assembler.general.IncludePaths>
-</AvrGcc>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>GFX_MONO_C12832_A1Z=1</Value>
+            <Value>CONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA</Value>
+            <Value>BOARD=XMEGA_A3BU_XPLAINED</Value>
+            <Value>CONFIG_ADC_CALLBACK_ENABLE</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../src</Value>
+            <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
+            <Value>../src/asf/common/boards</Value>
+            <Value>../src/asf/common/services/gpio</Value>
+            <Value>../src/asf/common/utils</Value>
+            <Value>../src/asf/xmega/boards</Value>
+            <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/asf/xmega/drivers/ioport</Value>
+            <Value>../src/asf/xmega/utils</Value>
+            <Value>../src/asf/xmega/utils/preprocessor</Value>
+            <Value>../src/config</Value>
+            <Value>../src/asf/xmega/drivers/cpu</Value>
+            <Value>../src/asf/xmega/drivers/pmic</Value>
+            <Value>../src/asf/xmega/drivers/nvm</Value>
+            <Value>../src/asf/xmega/drivers/usart</Value>
+            <Value>../src/asf/common/components/display/st7565r</Value>
+            <Value>../src/asf/common/services/gfx_mono</Value>
+            <Value>../src/asf/common/services/spi</Value>
+            <Value>../src/asf/common/services/clock</Value>
+            <Value>../src/asf/xmega/drivers/adc</Value>
+            <Value>../src/asf/xmega/drivers/sleep</Value>
+            <Value>../src/asf/common/services/sleepmgr</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.OtherFlags>-fdata-sections</avrgcc.compiler.optimization.OtherFlags>
+        <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avrgcc.compiler.optimization.DebugLevel>Maximum (-g3)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+        <avrgcc.linker.optimization.RelaxBranches>True</avrgcc.linker.optimization.RelaxBranches>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,--relax</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.general.AssemblerFlags>-mrelax -DCONFIG_NVM_IGNORE_XMEGA_A3_D3_REVB_ERRATA -DBOARD=XMEGA_A3BU_XPLAINED</avrgcc.assembler.general.AssemblerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>../src</Value>
+            <Value>../src/asf/common/applications/user_application/atxmega256a3bu_xmega_a3bu_xplained</Value>
+            <Value>../src/asf/common/boards</Value>
+            <Value>../src/asf/common/services/gpio</Value>
+            <Value>../src/asf/common/utils</Value>
+            <Value>../src/asf/xmega/boards</Value>
+            <Value>../src/asf/xmega/boards/xmega_a3bu_xplained</Value>
+            <Value>../src/asf/xmega/drivers/ioport</Value>
+            <Value>../src/asf/xmega/utils</Value>
+            <Value>../src/asf/xmega/utils/preprocessor</Value>
+            <Value>../src/config</Value>
+            <Value>../src/asf/xmega/drivers/cpu</Value>
+            <Value>../src/asf/xmega/drivers/pmic</Value>
+            <Value>../src/asf/xmega/drivers/nvm</Value>
+            <Value>../src/asf/xmega/drivers/usart</Value>
+            <Value>../src/asf/common/components/display/st7565r</Value>
+            <Value>../src/asf/common/services/gfx_mono</Value>
+            <Value>../src/asf/common/services/spi</Value>
+            <Value>../src/asf/common/services/clock</Value>
+            <Value>../src/asf/xmega/drivers/adc</Value>
+            <Value>../src/asf/xmega/drivers/sleep</Value>
+            <Value>../src/asf/common/services/sleepmgr</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
     </ToolchainSettings>
     <MemorySettings>
       <MemorySegments>
-  <InitialStack IsEnabled="0">
-    <Address>0x4000</Address>
-  </InitialStack>
-</MemorySegments>
+        <InitialStack IsEnabled="0">
+          <Address>0x4000</Address>
+        </InitialStack>
+      </MemorySegments>
     </MemorySettings>
     <GenerateHexFile>True</GenerateHexFile>
     <GenerateMapFile>True</GenerateMapFile>
