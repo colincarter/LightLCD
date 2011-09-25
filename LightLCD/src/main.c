@@ -50,13 +50,13 @@ int main(void)
 {
     uint8_t x;
 
-	// Initialize the board
+    // Initialize the board
     board_init();
     sysclk_init();
     pmic_init();
     cpu_irq_enable();
 		
-	// Setup the LCD and ADC
+    // Setup the LCD and ADC
     setup_lcd();
     setup_adc();
 
