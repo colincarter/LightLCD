@@ -3,23 +3,23 @@ LightLCD.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000011a6  00000000  00000000  00000074  2**1
+  0 .text         000011c4  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .bss          00000219  00802000  00802000  0000121a  2**0
+  1 .bss          0000021b  00802000  00802000  00001238  2**0
                   ALLOC
-  2 .stab         00000768  00000000  00000000  0000121c  2**2
+  2 .stab         00000768  00000000  00000000  00001238  2**2
                   CONTENTS, READONLY, DEBUGGING
-  3 .stabstr      000000e7  00000000  00000000  00001984  2**0
+  3 .stabstr      000000e7  00000000  00000000  000019a0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_aranges 00000048  00000000  00000000  00001a70  2**3
+  4 .debug_aranges 00000048  00000000  00000000  00001a88  2**3
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000138  00000000  00000000  00001ab8  2**0
+  5 .debug_info   00000138  00000000  00000000  00001ad0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000026  00000000  00000000  00001bf0  2**0
+  6 .debug_abbrev 00000026  00000000  00000000  00001c08  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000000de  00000000  00000000  00001c16  2**0
+  7 .debug_line   000000de  00000000  00000000  00001c2e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_ranges 00000020  00000000  00000000  00001cf8  2**3
+  8 .debug_ranges 00000020  00000000  00000000  00001d10  2**3
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -305,7 +305,7 @@ Disassembly of section .text:
      20c:	10 e2       	ldi	r17, 0x20	; 32
      20e:	a0 e0       	ldi	r26, 0x00	; 0
      210:	b0 e2       	ldi	r27, 0x20	; 32
-     212:	e6 ea       	ldi	r30, 0xA6	; 166
+     212:	e4 ec       	ldi	r30, 0xC4	; 196
      214:	f1 e1       	ldi	r31, 0x11	; 17
      216:	00 e0       	ldi	r16, 0x00	; 0
      218:	0b bf       	out	0x3b, r16	; 59
@@ -326,11 +326,11 @@ Disassembly of section .text:
      22e:	1d 92       	st	X+, r1
 
 00000230 <.do_clear_bss_start>:
-     230:	a9 31       	cpi	r26, 0x19	; 25
+     230:	ab 31       	cpi	r26, 0x1B	; 27
      232:	b1 07       	cpc	r27, r17
      234:	e1 f7       	brne	.-8      	; 0x22e <.do_clear_bss_loop>
-     236:	2d d7       	rcall	.+3674   	; 0x1092 <main>
-     238:	b4 c7       	rjmp	.+3944   	; 0x11a2 <_exit>
+     236:	49 d7       	rcall	.+3730   	; 0x10ca <main>
+     238:	c3 c7       	rjmp	.+3974   	; 0x11c0 <_exit>
 
 0000023a <__bad_interrupt>:
      23a:	e2 ce       	rjmp	.-572    	; 0x0 <__vectors>
@@ -1605,9 +1605,9 @@ Disassembly of section .text:
      bf2:	1f bf       	out	0x3f, r17	; 63
      bf4:	9f b7       	in	r25, 0x3f	; 63
      bf6:	f8 94       	cli
-     bf8:	80 91 14 22 	lds	r24, 0x2214
+     bf8:	80 91 16 22 	lds	r24, 0x2216
      bfc:	8f 5f       	subi	r24, 0xFF	; 255
-     bfe:	80 93 14 22 	sts	0x2214, r24
+     bfe:	80 93 16 22 	sts	0x2216, r24
      c02:	9f bf       	out	0x3f, r25	; 63
      c04:	df 91       	pop	r29
      c06:	cf 91       	pop	r28
@@ -2005,7 +2005,7 @@ Disassembly of section .text:
      ede:	ff 1c       	adc	r15, r15
      ee0:	a7 01       	movw	r20, r14
      ee2:	96 01       	movw	r18, r12
-     ee4:	3c d1       	rcall	.+632    	; 0x115e <__udivmodsi4>
+     ee4:	4b d1       	rcall	.+662    	; 0x117c <__udivmodsi4>
      ee6:	2f 5f       	subi	r18, 0xFF	; 255
      ee8:	3f 4f       	sbci	r19, 0xFF	; 255
      eea:	4f 4f       	sbci	r20, 0xFF	; 255
@@ -2213,7 +2213,7 @@ Disassembly of section .text:
     1076:	51 95       	neg	r21
     1078:	80 e2       	ldi	r24, 0x20	; 32
     107a:	84 1b       	sub	r24, r20
-    107c:	80 93 08 22 	sts	0x2208, r24
+    107c:	80 93 14 22 	sts	0x2214, r24
     1080:	8f b7       	in	r24, 0x3f	; 63
     1082:	f8 94       	cli
     1084:	90 81       	ld	r25, Z
@@ -2224,139 +2224,150 @@ Disassembly of section .text:
     108e:	8f bf       	out	0x3f, r24	; 63
     1090:	08 95       	ret
 
-00001092 <main>:
-    1092:	ff 92       	push	r15
-    1094:	0f 93       	push	r16
-    1096:	1f 93       	push	r17
-    1098:	72 db       	rcall	.-2332   	; 0x77e <board_init>
-    109a:	6a d9       	rcall	.-3372   	; 0x370 <sysclk_init>
-    109c:	87 e0       	ldi	r24, 0x07	; 7
-    109e:	e0 ea       	ldi	r30, 0xA0	; 160
-    10a0:	f0 e0       	ldi	r31, 0x00	; 0
-    10a2:	82 83       	std	Z+2, r24	; 0x02
-    10a4:	78 94       	sei
-    10a6:	0a da       	rcall	.-3052   	; 0x4bc <gfx_mono_st7565r_init>
-    10a8:	80 e1       	ldi	r24, 0x10	; 16
-    10aa:	e0 e8       	ldi	r30, 0x80	; 128
-    10ac:	f6 e0       	ldi	r31, 0x06	; 6
-    10ae:	85 83       	std	Z+5, r24	; 0x05
-    10b0:	81 e8       	ldi	r24, 0x81	; 129
-    10b2:	bf df       	rcall	.-130    	; 0x1032 <st7565r_write_command>
-    10b4:	81 e2       	ldi	r24, 0x21	; 33
-    10b6:	bd df       	rcall	.-134    	; 0x1032 <st7565r_write_command>
-    10b8:	80 e0       	ldi	r24, 0x00	; 0
-    10ba:	92 e0       	ldi	r25, 0x02	; 2
-    10bc:	69 e0       	ldi	r22, 0x09	; 9
-    10be:	72 e2       	ldi	r23, 0x22	; 34
-    10c0:	e2 dd       	rcall	.-1084   	; 0xc86 <adc_read_configuration>
-    10c2:	80 e0       	ldi	r24, 0x00	; 0
-    10c4:	92 e0       	ldi	r25, 0x02	; 2
-    10c6:	61 e0       	ldi	r22, 0x01	; 1
-    10c8:	40 e1       	ldi	r20, 0x10	; 16
-    10ca:	52 e2       	ldi	r21, 0x22	; 34
-    10cc:	39 de       	rcall	.-910    	; 0xd40 <adcch_read_configuration>
-    10ce:	80 91 0a 22 	lds	r24, 0x220A
-    10d2:	90 91 0b 22 	lds	r25, 0x220B
-    10d6:	9f 78       	andi	r25, 0x8F	; 143
-    10d8:	90 93 0b 22 	sts	0x220B, r25
-    10dc:	92 e0       	ldi	r25, 0x02	; 2
-    10de:	90 93 0d 22 	sts	0x220D, r25
-    10e2:	81 7e       	andi	r24, 0xE1	; 225
-    10e4:	80 93 0a 22 	sts	0x220A, r24
-    10e8:	10 92 0c 22 	sts	0x220C, r1
-    10ec:	80 e0       	ldi	r24, 0x00	; 0
-    10ee:	92 e0       	ldi	r25, 0x02	; 2
-    10f0:	69 e0       	ldi	r22, 0x09	; 9
-    10f2:	72 e2       	ldi	r23, 0x22	; 34
-    10f4:	8b dd       	rcall	.-1258   	; 0xc0c <adc_write_configuration>
-    10f6:	80 e0       	ldi	r24, 0x00	; 0
-    10f8:	92 e0       	ldi	r25, 0x02	; 2
-    10fa:	66 e3       	ldi	r22, 0x36	; 54
-    10fc:	78 e0       	ldi	r23, 0x08	; 8
-    10fe:	5a de       	rcall	.-844    	; 0xdb4 <adc_set_callback>
-    1100:	81 e0       	ldi	r24, 0x01	; 1
-    1102:	80 93 10 22 	sts	0x2210, r24
-    1106:	10 92 11 22 	sts	0x2211, r1
-    110a:	80 91 12 22 	lds	r24, 0x2212
-    110e:	80 7f       	andi	r24, 0xF0	; 240
-    1110:	81 60       	ori	r24, 0x01	; 1
-    1112:	80 93 12 22 	sts	0x2212, r24
-    1116:	80 e0       	ldi	r24, 0x00	; 0
-    1118:	92 e0       	ldi	r25, 0x02	; 2
-    111a:	61 e0       	ldi	r22, 0x01	; 1
-    111c:	40 e1       	ldi	r20, 0x10	; 16
-    111e:	52 e2       	ldi	r21, 0x22	; 34
-    1120:	d5 dd       	rcall	.-1110   	; 0xccc <adcch_write_configuration>
-    1122:	80 e0       	ldi	r24, 0x00	; 0
-    1124:	92 e0       	ldi	r25, 0x02	; 2
-    1126:	5b dd       	rcall	.-1354   	; 0xbde <adc_enable>
-    1128:	9f b7       	in	r25, 0x3f	; 63
-    112a:	f8 94       	cli
-    112c:	80 91 00 02 	lds	r24, 0x0200
-    1130:	84 60       	ori	r24, 0x04	; 4
-    1132:	80 93 00 02 	sts	0x0200, r24
-    1136:	9f bf       	out	0x3f, r25	; 63
-    1138:	ff 24       	eor	r15, r15
-    113a:	0d c0       	rjmp	.+26     	; 0x1156 <main+0xc4>
-    113c:	8f 2d       	mov	r24, r15
-    113e:	60 e0       	ldi	r22, 0x00	; 0
-    1140:	46 e0       	ldi	r20, 0x06	; 6
-    1142:	20 e2       	ldi	r18, 0x20	; 32
-    1144:	00 e0       	ldi	r16, 0x00	; 0
-    1146:	10 e0       	ldi	r17, 0x00	; 0
-    1148:	a0 da       	rcall	.-2752   	; 0x68a <gfx_mono_generic_draw_filled_rect>
-    114a:	60 91 08 22 	lds	r22, 0x2208
-    114e:	8f 2d       	mov	r24, r15
-    1150:	41 e0       	ldi	r20, 0x01	; 1
-    1152:	cd d9       	rcall	.-3174   	; 0x4ee <gfx_mono_st7565r_draw_pixel>
-    1154:	f3 94       	inc	r15
-    1156:	f7 fe       	sbrs	r15, 7
-    1158:	f1 cf       	rjmp	.-30     	; 0x113c <main+0xaa>
-    115a:	ff 24       	eor	r15, r15
-    115c:	ef cf       	rjmp	.-34     	; 0x113c <main+0xaa>
+00001092 <update_graph_display>:
+    1092:	0f 93       	push	r16
+    1094:	1f 93       	push	r17
+    1096:	80 91 08 22 	lds	r24, 0x2208
+    109a:	60 e0       	ldi	r22, 0x00	; 0
+    109c:	46 e0       	ldi	r20, 0x06	; 6
+    109e:	20 e2       	ldi	r18, 0x20	; 32
+    10a0:	00 e0       	ldi	r16, 0x00	; 0
+    10a2:	10 e0       	ldi	r17, 0x00	; 0
+    10a4:	f2 da       	rcall	.-2588   	; 0x68a <gfx_mono_generic_draw_filled_rect>
+    10a6:	60 91 14 22 	lds	r22, 0x2214
+    10aa:	80 91 08 22 	lds	r24, 0x2208
+    10ae:	41 e0       	ldi	r20, 0x01	; 1
+    10b0:	1e da       	rcall	.-3012   	; 0x4ee <gfx_mono_st7565r_draw_pixel>
+    10b2:	80 91 08 22 	lds	r24, 0x2208
+    10b6:	87 fd       	sbrc	r24, 7
+    10b8:	02 c0       	rjmp	.+4      	; 0x10be <update_graph_display+0x2c>
+    10ba:	8f 5f       	subi	r24, 0xFF	; 255
+    10bc:	01 c0       	rjmp	.+2      	; 0x10c0 <update_graph_display+0x2e>
+    10be:	80 e0       	ldi	r24, 0x00	; 0
+    10c0:	80 93 08 22 	sts	0x2208, r24
+    10c4:	1f 91       	pop	r17
+    10c6:	0f 91       	pop	r16
+    10c8:	08 95       	ret
 
-0000115e <__udivmodsi4>:
-    115e:	a1 e2       	ldi	r26, 0x21	; 33
-    1160:	1a 2e       	mov	r1, r26
-    1162:	aa 1b       	sub	r26, r26
-    1164:	bb 1b       	sub	r27, r27
-    1166:	fd 01       	movw	r30, r26
-    1168:	0d c0       	rjmp	.+26     	; 0x1184 <__udivmodsi4_ep>
+000010ca <main>:
+    10ca:	59 db       	rcall	.-2382   	; 0x77e <board_init>
+    10cc:	51 d9       	rcall	.-3422   	; 0x370 <sysclk_init>
+    10ce:	87 e0       	ldi	r24, 0x07	; 7
+    10d0:	e0 ea       	ldi	r30, 0xA0	; 160
+    10d2:	f0 e0       	ldi	r31, 0x00	; 0
+    10d4:	82 83       	std	Z+2, r24	; 0x02
+    10d6:	78 94       	sei
+    10d8:	f1 d9       	rcall	.-3102   	; 0x4bc <gfx_mono_st7565r_init>
+    10da:	80 e1       	ldi	r24, 0x10	; 16
+    10dc:	e0 e8       	ldi	r30, 0x80	; 128
+    10de:	f6 e0       	ldi	r31, 0x06	; 6
+    10e0:	85 83       	std	Z+5, r24	; 0x05
+    10e2:	81 e8       	ldi	r24, 0x81	; 129
+    10e4:	a6 df       	rcall	.-180    	; 0x1032 <st7565r_write_command>
+    10e6:	81 e2       	ldi	r24, 0x21	; 33
+    10e8:	a4 df       	rcall	.-184    	; 0x1032 <st7565r_write_command>
+    10ea:	80 e0       	ldi	r24, 0x00	; 0
+    10ec:	92 e0       	ldi	r25, 0x02	; 2
+    10ee:	6a e0       	ldi	r22, 0x0A	; 10
+    10f0:	72 e2       	ldi	r23, 0x22	; 34
+    10f2:	c9 dd       	rcall	.-1134   	; 0xc86 <adc_read_configuration>
+    10f4:	80 e0       	ldi	r24, 0x00	; 0
+    10f6:	92 e0       	ldi	r25, 0x02	; 2
+    10f8:	61 e0       	ldi	r22, 0x01	; 1
+    10fa:	41 e1       	ldi	r20, 0x11	; 17
+    10fc:	52 e2       	ldi	r21, 0x22	; 34
+    10fe:	20 de       	rcall	.-960    	; 0xd40 <adcch_read_configuration>
+    1100:	80 91 0b 22 	lds	r24, 0x220B
+    1104:	90 91 0c 22 	lds	r25, 0x220C
+    1108:	9f 78       	andi	r25, 0x8F	; 143
+    110a:	90 93 0c 22 	sts	0x220C, r25
+    110e:	92 e0       	ldi	r25, 0x02	; 2
+    1110:	90 93 0e 22 	sts	0x220E, r25
+    1114:	81 7e       	andi	r24, 0xE1	; 225
+    1116:	80 93 0b 22 	sts	0x220B, r24
+    111a:	10 92 0d 22 	sts	0x220D, r1
+    111e:	80 e0       	ldi	r24, 0x00	; 0
+    1120:	92 e0       	ldi	r25, 0x02	; 2
+    1122:	6a e0       	ldi	r22, 0x0A	; 10
+    1124:	72 e2       	ldi	r23, 0x22	; 34
+    1126:	72 dd       	rcall	.-1308   	; 0xc0c <adc_write_configuration>
+    1128:	80 e0       	ldi	r24, 0x00	; 0
+    112a:	92 e0       	ldi	r25, 0x02	; 2
+    112c:	66 e3       	ldi	r22, 0x36	; 54
+    112e:	78 e0       	ldi	r23, 0x08	; 8
+    1130:	41 de       	rcall	.-894    	; 0xdb4 <adc_set_callback>
+    1132:	81 e0       	ldi	r24, 0x01	; 1
+    1134:	80 93 11 22 	sts	0x2211, r24
+    1138:	10 92 12 22 	sts	0x2212, r1
+    113c:	80 91 13 22 	lds	r24, 0x2213
+    1140:	80 7f       	andi	r24, 0xF0	; 240
+    1142:	81 60       	ori	r24, 0x01	; 1
+    1144:	80 93 13 22 	sts	0x2213, r24
+    1148:	80 e0       	ldi	r24, 0x00	; 0
+    114a:	92 e0       	ldi	r25, 0x02	; 2
+    114c:	61 e0       	ldi	r22, 0x01	; 1
+    114e:	41 e1       	ldi	r20, 0x11	; 17
+    1150:	52 e2       	ldi	r21, 0x22	; 34
+    1152:	bc dd       	rcall	.-1160   	; 0xccc <adcch_write_configuration>
+    1154:	80 e0       	ldi	r24, 0x00	; 0
+    1156:	92 e0       	ldi	r25, 0x02	; 2
+    1158:	42 dd       	rcall	.-1404   	; 0xbde <adc_enable>
+    115a:	9f b7       	in	r25, 0x3f	; 63
+    115c:	f8 94       	cli
+    115e:	80 91 00 02 	lds	r24, 0x0200
+    1162:	84 60       	ori	r24, 0x04	; 4
+    1164:	80 93 00 02 	sts	0x0200, r24
+    1168:	9f bf       	out	0x3f, r25	; 63
+    116a:	80 91 09 22 	lds	r24, 0x2209
+    116e:	88 23       	and	r24, r24
+    1170:	11 f4       	brne	.+4      	; 0x1176 <main+0xac>
+    1172:	8f df       	rcall	.-226    	; 0x1092 <update_graph_display>
+    1174:	fa cf       	rjmp	.-12     	; 0x116a <main+0xa0>
+    1176:	80 91 09 22 	lds	r24, 0x2209
+    117a:	f7 cf       	rjmp	.-18     	; 0x116a <main+0xa0>
 
-0000116a <__udivmodsi4_loop>:
-    116a:	aa 1f       	adc	r26, r26
-    116c:	bb 1f       	adc	r27, r27
-    116e:	ee 1f       	adc	r30, r30
-    1170:	ff 1f       	adc	r31, r31
-    1172:	a2 17       	cp	r26, r18
-    1174:	b3 07       	cpc	r27, r19
-    1176:	e4 07       	cpc	r30, r20
-    1178:	f5 07       	cpc	r31, r21
-    117a:	20 f0       	brcs	.+8      	; 0x1184 <__udivmodsi4_ep>
-    117c:	a2 1b       	sub	r26, r18
-    117e:	b3 0b       	sbc	r27, r19
-    1180:	e4 0b       	sbc	r30, r20
-    1182:	f5 0b       	sbc	r31, r21
+0000117c <__udivmodsi4>:
+    117c:	a1 e2       	ldi	r26, 0x21	; 33
+    117e:	1a 2e       	mov	r1, r26
+    1180:	aa 1b       	sub	r26, r26
+    1182:	bb 1b       	sub	r27, r27
+    1184:	fd 01       	movw	r30, r26
+    1186:	0d c0       	rjmp	.+26     	; 0x11a2 <__udivmodsi4_ep>
 
-00001184 <__udivmodsi4_ep>:
-    1184:	66 1f       	adc	r22, r22
-    1186:	77 1f       	adc	r23, r23
-    1188:	88 1f       	adc	r24, r24
-    118a:	99 1f       	adc	r25, r25
-    118c:	1a 94       	dec	r1
-    118e:	69 f7       	brne	.-38     	; 0x116a <__udivmodsi4_loop>
-    1190:	60 95       	com	r22
-    1192:	70 95       	com	r23
-    1194:	80 95       	com	r24
-    1196:	90 95       	com	r25
-    1198:	9b 01       	movw	r18, r22
-    119a:	ac 01       	movw	r20, r24
-    119c:	bd 01       	movw	r22, r26
-    119e:	cf 01       	movw	r24, r30
-    11a0:	08 95       	ret
+00001188 <__udivmodsi4_loop>:
+    1188:	aa 1f       	adc	r26, r26
+    118a:	bb 1f       	adc	r27, r27
+    118c:	ee 1f       	adc	r30, r30
+    118e:	ff 1f       	adc	r31, r31
+    1190:	a2 17       	cp	r26, r18
+    1192:	b3 07       	cpc	r27, r19
+    1194:	e4 07       	cpc	r30, r20
+    1196:	f5 07       	cpc	r31, r21
+    1198:	20 f0       	brcs	.+8      	; 0x11a2 <__udivmodsi4_ep>
+    119a:	a2 1b       	sub	r26, r18
+    119c:	b3 0b       	sbc	r27, r19
+    119e:	e4 0b       	sbc	r30, r20
+    11a0:	f5 0b       	sbc	r31, r21
 
-000011a2 <_exit>:
-    11a2:	f8 94       	cli
+000011a2 <__udivmodsi4_ep>:
+    11a2:	66 1f       	adc	r22, r22
+    11a4:	77 1f       	adc	r23, r23
+    11a6:	88 1f       	adc	r24, r24
+    11a8:	99 1f       	adc	r25, r25
+    11aa:	1a 94       	dec	r1
+    11ac:	69 f7       	brne	.-38     	; 0x1188 <__udivmodsi4_loop>
+    11ae:	60 95       	com	r22
+    11b0:	70 95       	com	r23
+    11b2:	80 95       	com	r24
+    11b4:	90 95       	com	r25
+    11b6:	9b 01       	movw	r18, r22
+    11b8:	ac 01       	movw	r20, r24
+    11ba:	bd 01       	movw	r22, r26
+    11bc:	cf 01       	movw	r24, r30
+    11be:	08 95       	ret
 
-000011a4 <__stop_program>:
-    11a4:	ff cf       	rjmp	.-2      	; 0x11a4 <__stop_program>
+000011c0 <_exit>:
+    11c0:	f8 94       	cli
+
+000011c2 <__stop_program>:
+    11c2:	ff cf       	rjmp	.-2      	; 0x11c2 <__stop_program>

@@ -7,11 +7,21 @@
 
 #include <asf.h>
 
+enum Modes
+{
+    MODE_GRAPH,
+    MODE_TEXT
+};
+
 static const uint16_t SCALED_LCD_HEIGHT = (4096 / GFX_MONO_LCD_HEIGHT);
 
 static struct adc_config adc_config;
 static struct adc_channel_config adcch_config;
 static volatile uint8_t scaled_light_reading;
+
+static volatile uint8_t mode =  MODE_GRAPH;
+
+static uint8_t x = 0;
 
 static void adc_handler(ADC_t *adc, uint8_t ch_mask, adc_result_t result)
 {
@@ -45,6 +55,23 @@ static void setup_adc(void)
     adcch_write_configuration(&ADCA, ADC_CH0, &adcch_config);	
 }
 
+void update_graph_display(void)
+{
+    // Clear just ahead of the pixel position
+    gfx_mono_draw_filled_rect(x, 0, 6, GFX_MONO_LCD_HEIGHT, GFX_PIXEL_CLR);
+            
+    // Draw the pixel 
+    gfx_mono_draw_pixel(x, scaled_light_reading, GFX_PIXEL_SET);
+    
+    x = (x >=  GFX_MONO_LCD_WIDTH) ? 0 : ++x;
+}
+
+void update_text_display(void)
+{
+    
+    
+}
+
 
 int main(void)
 {
@@ -64,16 +91,10 @@ int main(void)
     adc_start_conversion(&ADCA, ADC_CH0);
 		
     while (1) 
-    {	
-        // We'll draw over the length of the lcd screen
-        for (x = 0; x < GFX_MONO_LCD_WIDTH; x++)
-        {
-            // Clear just ahead of the pixel position
-            gfx_mono_draw_filled_rect(x, 0, 6, GFX_MONO_LCD_HEIGHT, GFX_PIXEL_CLR);
-            
-            // Draw the pixel 
-            gfx_mono_draw_pixel(x, scaled_light_reading, GFX_PIXEL_SET);	
-        }
-    }
-
+    {
+        if (mode == MODE_GRAPH)
+            update_graph_display();
+        else if (mode == MODE_TEXT)
+            update_text_display();
+    }    	
 }
