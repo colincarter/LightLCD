@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # AvrStudio Solution File, Format Version 11.00
 Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "LightLCD", "LightLCD\LightLCD.avrgccproj", "{5D3BC666-37B5-4975-BE6B-8A21B8AEE520}"
 EndProject
-Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "XMEGA_A3BU_XPLAINED_DEMO1", "XMEGA_A3BU_XPLAINED_DEMO1\XMEGA_A3BU_XPLAINED_DEMO1.avrgccproj", "{4BDED920-D416-11E0-AA52-000C2967FA5F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -15,10 +13,6 @@ Global
 		{5D3BC666-37B5-4975-BE6B-8A21B8AEE520}.Debug|AVR.Build.0 = Debug|AVR
 		{5D3BC666-37B5-4975-BE6B-8A21B8AEE520}.Release|AVR.ActiveCfg = Release|AVR
 		{5D3BC666-37B5-4975-BE6B-8A21B8AEE520}.Release|AVR.Build.0 = Release|AVR
-		{4BDED920-D416-11E0-AA52-000C2967FA5F}.Debug|AVR.ActiveCfg = Debug|AVR
-		{4BDED920-D416-11E0-AA52-000C2967FA5F}.Debug|AVR.Build.0 = Debug|AVR
-		{4BDED920-D416-11E0-AA52-000C2967FA5F}.Release|AVR.ActiveCfg = Release|AVR
-		{4BDED920-D416-11E0-AA52-000C2967FA5F}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
