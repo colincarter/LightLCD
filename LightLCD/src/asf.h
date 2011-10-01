@@ -67,4 +67,5 @@
 
 #include <sysfont.h>
 
+#include <tc.h>
 #endif // ASF_H

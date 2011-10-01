@@ -177,6 +177,25 @@ Discarded input sections
  .data          0x00000000        0x0 src/asf/xmega/drivers/nvm/nvm_asm.o
  .bss           0x00000000        0x0 src/asf/xmega/drivers/nvm/nvm_asm.o
  .BOOT          0x00000000       0x44 src/asf/xmega/drivers/nvm/nvm_asm.o
+ .text          0x00000000        0x0 src/asf/xmega/drivers/tc/tc.o
+ .data          0x00000000        0x0 src/asf/xmega/drivers/tc/tc.o
+ .bss           0x00000000        0x0 src/asf/xmega/drivers/tc/tc.o
+ .text.tc_enable
+                0x00000000       0xb0 src/asf/xmega/drivers/tc/tc.o
+ .text.tc_disable
+                0x00000000       0xb0 src/asf/xmega/drivers/tc/tc.o
+ .text.tc_set_overflow_interrupt_callback
+                0x00000000       0x7e src/asf/xmega/drivers/tc/tc.o
+ .text.tc_set_error_interrupt_callback
+                0x00000000       0x7e src/asf/xmega/drivers/tc/tc.o
+ .text.tc_set_cca_interrupt_callback
+                0x00000000       0x7e src/asf/xmega/drivers/tc/tc.o
+ .text.tc_set_ccb_interrupt_callback
+                0x00000000       0x7e src/asf/xmega/drivers/tc/tc.o
+ .text.tc_set_ccc_interrupt_callback
+                0x00000000       0x48 src/asf/xmega/drivers/tc/tc.o
+ .text.tc_set_ccd_interrupt_callback
+                0x00000000       0x48 src/asf/xmega/drivers/tc/tc.o
  .text          0x00000000        0x0 src/asf/xmega/drivers/usart/usart.o
  .data          0x00000000        0x0 src/asf/xmega/drivers/usart/usart.o
  .bss           0x00000000        0x0 src/asf/xmega/drivers/usart/usart.o
@@ -191,8 +210,6 @@ Discarded input sections
  .text          0x00000000        0x0 src/main.o
  .data          0x00000000        0x0 src/main.o
  .bss           0x00000000        0x0 src/main.o
- .text.update_text_display
-                0x00000000        0x2 src/main.o
  .text          0x00000000        0x0 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_udivmodsi4.o)
  .data          0x00000000        0x0 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_udivmodsi4.o)
  .bss           0x00000000        0x0 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_udivmodsi4.o)
@@ -243,6 +260,7 @@ LOAD src/asf/xmega/drivers/cpu/ccp.o
 LOAD src/asf/xmega/drivers/ioport/ioport.o
 LOAD src/asf/xmega/drivers/nvm/nvm.o
 LOAD src/asf/xmega/drivers/nvm/nvm_asm.o
+LOAD src/asf/xmega/drivers/tc/tc.o
 LOAD src/asf/xmega/drivers/usart/usart.o
 LOAD src/main.o
 LOAD c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a
@@ -339,7 +357,7 @@ LOAD c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1250
+.text           0x00000000     0x1e82
  *(.vectors)
  .vectors       0x00000000      0x1fc c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avrxmega6/crtx256a3bu.o
                 0x00000000                __vector_default
@@ -391,284 +409,349 @@ LOAD c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000236        0x6 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avrxmega6/crtx256a3bu.o
+ .init9         0x00000236        0x8 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avrxmega6/crtx256a3bu.o
  *(.init9)
  *(.text)
- .text          0x0000023c        0x2 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avrxmega6/crtx256a3bu.o
-                0x0000023c                __vector_38
-                0x0000023c                __vector_104
-                0x0000023c                __vector_22
-                0x0000023c                __vector_63
-                0x0000023c                __vector_28
-                0x0000023c                __vector_67
-                0x0000023c                __vector_1
-                0x0000023c                __vector_119
-                0x0000023c                __vector_32
-                0x0000023c                __vector_75
-                0x0000023c                __vector_91
-                0x0000023c                __vector_34
-                0x0000023c                __vector_62
-                0x0000023c                __vector_77
-                0x0000023c                __vector_102
-                0x0000023c                __vector_24
-                0x0000023c                __vector_12
-                0x0000023c                __vector_55
-                0x0000023c                __vector_69
-                0x0000023c                __vector_81
-                0x0000023c                __vector_90
-                0x0000023c                __vector_46
-                0x0000023c                __bad_interrupt
-                0x0000023c                __vector_122
-                0x0000023c                __vector_114
-                0x0000023c                __vector_6
-                0x0000023c                __vector_110
-                0x0000023c                __vector_31
-                0x0000023c                __vector_92
-                0x0000023c                __vector_35
-                0x0000023c                __vector_78
-                0x0000023c                __vector_117
-                0x0000023c                __vector_107
-                0x0000023c                __vector_3
-                0x0000023c                __vector_105
-                0x0000023c                __vector_98
-                0x0000023c                __vector_23
-                0x0000023c                __vector_68
-                0x0000023c                __vector_30
-                0x0000023c                __vector_45
-                0x0000023c                __vector_25
-                0x0000023c                __vector_93
-                0x0000023c                __vector_61
-                0x0000023c                __vector_11
-                0x0000023c                __vector_54
-                0x0000023c                __vector_99
-                0x0000023c                __vector_13
-                0x0000023c                __vector_17
-                0x0000023c                __vector_19
-                0x0000023c                __vector_56
-                0x0000023c                __vector_7
-                0x0000023c                __vector_125
-                0x0000023c                __vector_49
-                0x0000023c                __vector_123
-                0x0000023c                __vector_86
-                0x0000023c                __vector_100
-                0x0000023c                __vector_101
-                0x0000023c                __vector_64
-                0x0000023c                __vector_88
-                0x0000023c                __vector_109
-                0x0000023c                __vector_43
-                0x0000023c                __vector_27
-                0x0000023c                __vector_5
-                0x0000023c                __vector_113
-                0x0000023c                __vector_33
-                0x0000023c                __vector_76
-                0x0000023c                __vector_115
-                0x0000023c                __vector_47
-                0x0000023c                __vector_52
-                0x0000023c                __vector_37
-                0x0000023c                __vector_95
-                0x0000023c                __vector_103
-                0x0000023c                __vector_96
-                0x0000023c                __vector_89
-                0x0000023c                __vector_108
-                0x0000023c                __vector_4
-                0x0000023c                __vector_44
-                0x0000023c                __vector_82
-                0x0000023c                __vector_106
-                0x0000023c                __vector_118
-                0x0000023c                __vector_51
-                0x0000023c                __vector_9
-                0x0000023c                __vector_2
-                0x0000023c                __vector_21
-                0x0000023c                __vector_15
-                0x0000023c                __vector_66
-                0x0000023c                __vector_36
-                0x0000023c                __vector_79
-                0x0000023c                __vector_58
-                0x0000023c                __vector_70
-                0x0000023c                __vector_83
-                0x0000023c                __vector_29
-                0x0000023c                __vector_60
-                0x0000023c                __vector_121
-                0x0000023c                __vector_85
-                0x0000023c                __vector_94
-                0x0000023c                __vector_126
-                0x0000023c                __vector_8
-                0x0000023c                __vector_26
-                0x0000023c                __vector_48
-                0x0000023c                __vector_124
-                0x0000023c                __vector_116
-                0x0000023c                __vector_112
-                0x0000023c                __vector_111
-                0x0000023c                __vector_80
-                0x0000023c                __vector_14
-                0x0000023c                __vector_84
-                0x0000023c                __vector_57
-                0x0000023c                __vector_53
-                0x0000023c                __vector_10
-                0x0000023c                __vector_50
-                0x0000023c                __vector_16
-                0x0000023c                __vector_59
-                0x0000023c                __vector_18
-                0x0000023c                __vector_97
-                0x0000023c                __vector_20
-                0x0000023c                __vector_87
-                0x0000023c                __vector_65
-                0x0000023c                __vector_120
-                0x0000023e                . = ALIGN (0x2)
+ .text          0x0000023e        0x2 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avrxmega6/crtx256a3bu.o
+                0x0000023e                __vector_38
+                0x0000023e                __vector_104
+                0x0000023e                __vector_63
+                0x0000023e                __vector_28
+                0x0000023e                __vector_67
+                0x0000023e                __vector_1
+                0x0000023e                __vector_119
+                0x0000023e                __vector_32
+                0x0000023e                __vector_75
+                0x0000023e                __vector_91
+                0x0000023e                __vector_34
+                0x0000023e                __vector_62
+                0x0000023e                __vector_102
+                0x0000023e                __vector_24
+                0x0000023e                __vector_12
+                0x0000023e                __vector_69
+                0x0000023e                __vector_90
+                0x0000023e                __vector_46
+                0x0000023e                __bad_interrupt
+                0x0000023e                __vector_122
+                0x0000023e                __vector_114
+                0x0000023e                __vector_6
+                0x0000023e                __vector_31
+                0x0000023e                __vector_92
+                0x0000023e                __vector_35
+                0x0000023e                __vector_117
+                0x0000023e                __vector_107
+                0x0000023e                __vector_3
+                0x0000023e                __vector_105
+                0x0000023e                __vector_98
+                0x0000023e                __vector_68
+                0x0000023e                __vector_30
+                0x0000023e                __vector_45
+                0x0000023e                __vector_25
+                0x0000023e                __vector_93
+                0x0000023e                __vector_61
+                0x0000023e                __vector_11
+                0x0000023e                __vector_99
+                0x0000023e                __vector_13
+                0x0000023e                __vector_7
+                0x0000023e                __vector_125
+                0x0000023e                __vector_123
+                0x0000023e                __vector_100
+                0x0000023e                __vector_101
+                0x0000023e                __vector_64
+                0x0000023e                __vector_88
+                0x0000023e                __vector_43
+                0x0000023e                __vector_27
+                0x0000023e                __vector_5
+                0x0000023e                __vector_33
+                0x0000023e                __vector_76
+                0x0000023e                __vector_115
+                0x0000023e                __vector_37
+                0x0000023e                __vector_95
+                0x0000023e                __vector_103
+                0x0000023e                __vector_96
+                0x0000023e                __vector_89
+                0x0000023e                __vector_4
+                0x0000023e                __vector_44
+                0x0000023e                __vector_106
+                0x0000023e                __vector_118
+                0x0000023e                __vector_9
+                0x0000023e                __vector_2
+                0x0000023e                __vector_66
+                0x0000023e                __vector_36
+                0x0000023e                __vector_58
+                0x0000023e                __vector_70
+                0x0000023e                __vector_29
+                0x0000023e                __vector_60
+                0x0000023e                __vector_121
+                0x0000023e                __vector_94
+                0x0000023e                __vector_126
+                0x0000023e                __vector_8
+                0x0000023e                __vector_26
+                0x0000023e                __vector_124
+                0x0000023e                __vector_116
+                0x0000023e                __vector_57
+                0x0000023e                __vector_10
+                0x0000023e                __vector_59
+                0x0000023e                __vector_97
+                0x0000023e                __vector_87
+                0x0000023e                __vector_65
+                0x0000023e                __vector_120
+                0x00000240                . = ALIGN (0x2)
  *(.text.*)
  .text.ioport_set_value
-                0x0000023e       0x48 src/asf/common/components/display/st7565r/st7565r.o
+                0x00000240       0x48 src/asf/common/components/display/st7565r/st7565r.o
  .text.st7565r_write_command
-                0x00000286       0x3a src/asf/common/components/display/st7565r/st7565r.o
+                0x00000288       0x3a src/asf/common/components/display/st7565r/st7565r.o
  .text.st7565r_init
-                0x000002c0       0xb2 src/asf/common/components/display/st7565r/st7565r.o
-                0x000002c0                st7565r_init
+                0x000002c2       0xb2 src/asf/common/components/display/st7565r/st7565r.o
+                0x000002c2                st7565r_init
  .text.sysclk_init
-                0x00000372       0x20 src/asf/common/services/clock/xmega/sysclk.o
-                0x00000372                sysclk_init
+                0x00000374       0x20 src/asf/common/services/clock/xmega/sysclk.o
+                0x00000374                sysclk_init
  .text.sysclk_enable_module
-                0x00000392       0x16 src/asf/common/services/clock/xmega/sysclk.o
-                0x00000392                sysclk_enable_module
+                0x00000394       0x16 src/asf/common/services/clock/xmega/sysclk.o
+                0x00000394                sysclk_enable_module
  .text.sysclk_disable_module
-                0x000003a8       0x14 src/asf/common/services/clock/xmega/sysclk.o
-                0x000003a8                sysclk_disable_module
+                0x000003aa       0x14 src/asf/common/services/clock/xmega/sysclk.o
+                0x000003aa                sysclk_disable_module
  .text.ioport_set_value
-                0x000003bc       0x48 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x000003be       0x48 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
  .text.st7565r_write_command
-                0x00000404       0x3a src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x00000406       0x3a src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
  .text.st7565r_write_data
-                0x0000043e       0x40 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x00000440       0x40 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
  .text.st7565r_set_page_address
-                0x0000047e        0x6 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x00000480        0x6 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
  .text.st7565r_set_column_address
-                0x00000484       0x18 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x00000486       0x18 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
  .text.gfx_mono_st7565r_put_byte
-                0x0000049c       0x22 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
-                0x0000049c                gfx_mono_st7565r_put_byte
+                0x0000049e       0x22 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x0000049e                gfx_mono_st7565r_put_byte
  .text.gfx_mono_st7565r_init
-                0x000004be       0x32 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
-                0x000004be                gfx_mono_st7565r_init
+                0x000004c0       0x32 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x000004c0                gfx_mono_st7565r_init
  .text.gfx_mono_st7565r_draw_pixel
-                0x000004f0       0x84 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
-                0x000004f0                gfx_mono_st7565r_draw_pixel
+                0x000004f2       0x84 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x000004f2                gfx_mono_st7565r_draw_pixel
  .text.gfx_mono_st7565r_get_byte
-                0x00000574        0x4 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
-                0x00000574                gfx_mono_st7565r_get_byte
+                0x00000576        0x4 src/asf/common/services/gfx_mono/gfx_mono_c12832_a1z.o
+                0x00000576                gfx_mono_st7565r_get_byte
  .text.gfx_mono_set_framebuffer
-                0x00000578        0xa src/asf/common/services/gfx_mono/gfx_mono_framebuffer.o
-                0x00000578                gfx_mono_set_framebuffer
+                0x0000057a        0xa src/asf/common/services/gfx_mono/gfx_mono_framebuffer.o
+                0x0000057a                gfx_mono_set_framebuffer
  .text.gfx_mono_framebuffer_put_byte
-                0x00000582       0x20 src/asf/common/services/gfx_mono/gfx_mono_framebuffer.o
-                0x00000582                gfx_mono_framebuffer_put_byte
+                0x00000584       0x20 src/asf/common/services/gfx_mono/gfx_mono_framebuffer.o
+                0x00000584                gfx_mono_framebuffer_put_byte
  .text.gfx_mono_framebuffer_get_byte
-                0x000005a2       0x20 src/asf/common/services/gfx_mono/gfx_mono_framebuffer.o
-                0x000005a2                gfx_mono_framebuffer_get_byte
+                0x000005a4       0x20 src/asf/common/services/gfx_mono/gfx_mono_framebuffer.o
+                0x000005a4                gfx_mono_framebuffer_get_byte
  .text.gfx_mono_generic_draw_horizontal_line
-                0x000005c2       0xca src/asf/common/services/gfx_mono/gfx_mono_generic.o
-                0x000005c2                gfx_mono_generic_draw_horizontal_line
+                0x000005c4       0xca src/asf/common/services/gfx_mono/gfx_mono_generic.o
+                0x000005c4                gfx_mono_generic_draw_horizontal_line
  .text.gfx_mono_generic_draw_filled_rect
-                0x0000068c       0x36 src/asf/common/services/gfx_mono/gfx_mono_generic.o
-                0x0000068c                gfx_mono_generic_draw_filled_rect
+                0x0000068e       0x36 src/asf/common/services/gfx_mono/gfx_mono_generic.o
+                0x0000068e                gfx_mono_generic_draw_filled_rect
  .text.usart_spi_init
-                0x000006c2       0x5c src/asf/common/services/spi/xmega_usart_spi/usart_spi.o
-                0x000006c2                usart_spi_init
+                0x000006c4       0x5c src/asf/common/services/spi/xmega_usart_spi/usart_spi.o
+                0x000006c4                usart_spi_init
  .text.usart_spi_setup_device
-                0x0000071e       0x34 src/asf/common/services/spi/xmega_usart_spi/usart_spi.o
-                0x0000071e                usart_spi_setup_device
+                0x00000720       0x36 src/asf/common/services/spi/xmega_usart_spi/usart_spi.o
+                0x00000720                usart_spi_setup_device
  .text.ioport_configure_pin
-                0x00000752       0x2e src/asf/xmega/boards/xmega_a3bu_xplained/init.o
+                0x00000756       0x2e src/asf/xmega/boards/xmega_a3bu_xplained/init.o
  .text.board_init
-                0x00000780       0x58 src/asf/xmega/boards/xmega_a3bu_xplained/init.o
-                0x00000780                board_init
+                0x00000784       0x58 src/asf/xmega/boards/xmega_a3bu_xplained/init.o
+                0x00000784                board_init
  .text.adc_enable_clock
-                0x000007d8       0x42 src/asf/xmega/drivers/adc/adc.o
+                0x000007dc       0x42 src/asf/xmega/drivers/adc/adc.o
  .text.adc_disable_clock
-                0x0000081a       0x3e src/asf/xmega/drivers/adc/adc.o
+                0x0000081e       0x3e src/asf/xmega/drivers/adc/adc.o
  .text.nvm_read_production_signature_row
-                0x00000858        0x8 src/asf/xmega/drivers/adc/adc.o
+                0x0000085c        0x8 src/asf/xmega/drivers/adc/adc.o
  .text.adc_get_calibration_data
-                0x00000860       0x60 src/asf/xmega/drivers/adc/adc.o
+                0x00000864       0x60 src/asf/xmega/drivers/adc/adc.o
  .text.__vector_71
-                0x000008c0       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x000008c0                __vector_71
+                0x000008c4       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x000008c4                __vector_71
  .text.__vector_72
-                0x00000924       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x00000924                __vector_72
+                0x00000928       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x00000928                __vector_72
  .text.__vector_73
-                0x00000988       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x00000988                __vector_73
+                0x0000098c       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x0000098c                __vector_73
  .text.__vector_74
-                0x000009ec       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x000009ec                __vector_74
+                0x000009f0       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x000009f0                __vector_74
  .text.__vector_39
-                0x00000a50       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x00000a50                __vector_39
+                0x00000a54       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x00000a54                __vector_39
  .text.__vector_40
-                0x00000ab4       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x00000ab4                __vector_40
+                0x00000ab8       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x00000ab8                __vector_40
  .text.__vector_41
-                0x00000b18       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x00000b18                __vector_41
+                0x00000b1c       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x00000b1c                __vector_41
  .text.__vector_42
-                0x00000b7c       0x64 src/asf/xmega/drivers/adc/adc.o
-                0x00000b7c                __vector_42
+                0x00000b80       0x64 src/asf/xmega/drivers/adc/adc.o
+                0x00000b80                __vector_42
  .text.adc_enable
-                0x00000be0       0x2e src/asf/xmega/drivers/adc/adc.o
-                0x00000be0                adc_enable
+                0x00000be4       0x2e src/asf/xmega/drivers/adc/adc.o
+                0x00000be4                adc_enable
  .text.adc_write_configuration
-                0x00000c0e       0x7a src/asf/xmega/drivers/adc/adc.o
-                0x00000c0e                adc_write_configuration
+                0x00000c12       0x7a src/asf/xmega/drivers/adc/adc.o
+                0x00000c12                adc_write_configuration
  .text.adc_read_configuration
-                0x00000c88       0x46 src/asf/xmega/drivers/adc/adc.o
-                0x00000c88                adc_read_configuration
+                0x00000c8c       0x46 src/asf/xmega/drivers/adc/adc.o
+                0x00000c8c                adc_read_configuration
  .text.adcch_write_configuration
-                0x00000cce       0x74 src/asf/xmega/drivers/adc/adc.o
-                0x00000cce                adcch_write_configuration
+                0x00000cd2       0x74 src/asf/xmega/drivers/adc/adc.o
+                0x00000cd2                adcch_write_configuration
  .text.adcch_read_configuration
-                0x00000d42       0x74 src/asf/xmega/drivers/adc/adc.o
-                0x00000d42                adcch_read_configuration
+                0x00000d46       0x74 src/asf/xmega/drivers/adc/adc.o
+                0x00000d46                adcch_read_configuration
  .text.adc_set_callback
-                0x00000db6       0x2a src/asf/xmega/drivers/adc/adc.o
-                0x00000db6                adc_set_callback
+                0x00000dba       0x2a src/asf/xmega/drivers/adc/adc.o
+                0x00000dba                adc_set_callback
  .text.ioport_configure_port_pin
-                0x00000de0       0x54 src/asf/xmega/drivers/ioport/ioport.o
-                0x00000de0                ioport_configure_port_pin
+                0x00000de4       0x54 src/asf/xmega/drivers/ioport/ioport.o
+                0x00000de4                ioport_configure_port_pin
  .text.nvm_read_byte
-                0x00000e34       0x14 src/asf/xmega/drivers/nvm/nvm_asm.o
-                0x00000e34                nvm_read_byte
+                0x00000e38       0x14 src/asf/xmega/drivers/nvm/nvm_asm.o
+                0x00000e38                nvm_read_byte
+ .text.__vector_14
+                0x00000e4c       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00000e4c                __vector_14
+ .text.__vector_15
+                0x00000ea6       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00000ea6                __vector_15
+ .text.__vector_16
+                0x00000f00       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00000f00                __vector_16
+ .text.__vector_17
+                0x00000f5a       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00000f5a                __vector_17
+ .text.__vector_18
+                0x00000fb4       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00000fb4                __vector_18
+ .text.__vector_19
+                0x0000100e       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x0000100e                __vector_19
+ .text.__vector_20
+                0x00001068       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001068                __vector_20
+ .text.__vector_21
+                0x000010c2       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000010c2                __vector_21
+ .text.__vector_22
+                0x0000111c       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x0000111c                __vector_22
+ .text.__vector_23
+                0x00001176       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001176                __vector_23
+ .text.__vector_77
+                0x000011d0       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000011d0                __vector_77
+ .text.__vector_78
+                0x0000122a       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x0000122a                __vector_78
+ .text.__vector_79
+                0x00001284       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001284                __vector_79
+ .text.__vector_80
+                0x000012de       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000012de                __vector_80
+ .text.__vector_81
+                0x00001338       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001338                __vector_81
+ .text.__vector_82
+                0x00001392       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001392                __vector_82
+ .text.__vector_83
+                0x000013ec       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000013ec                __vector_83
+ .text.__vector_84
+                0x00001446       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001446                __vector_84
+ .text.__vector_85
+                0x000014a0       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000014a0                __vector_85
+ .text.__vector_86
+                0x000014fa       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000014fa                __vector_86
+ .text.__vector_47
+                0x00001554       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001554                __vector_47
+ .text.__vector_48
+                0x000015ae       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000015ae                __vector_48
+ .text.__vector_49
+                0x00001608       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001608                __vector_49
+ .text.__vector_50
+                0x00001662       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001662                __vector_50
+ .text.__vector_51
+                0x000016bc       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000016bc                __vector_51
+ .text.__vector_52
+                0x00001716       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001716                __vector_52
+ .text.__vector_53
+                0x00001770       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001770                __vector_53
+ .text.__vector_54
+                0x000017ca       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000017ca                __vector_54
+ .text.__vector_55
+                0x00001824       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001824                __vector_55
+ .text.__vector_56
+                0x0000187e       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x0000187e                __vector_56
+ .text.__vector_108
+                0x000018d8       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000018d8                __vector_108
+ .text.__vector_109
+                0x00001932       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001932                __vector_109
+ .text.__vector_110
+                0x0000198c       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x0000198c                __vector_110
+ .text.__vector_111
+                0x000019e6       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x000019e6                __vector_111
+ .text.__vector_112
+                0x00001a40       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001a40                __vector_112
+ .text.__vector_113
+                0x00001a9a       0x5a src/asf/xmega/drivers/tc/tc.o
+                0x00001a9a                __vector_113
  .text.usart_enable_module_clock
-                0x00000e48       0x70 src/asf/xmega/drivers/usart/usart.o
+                0x00001af4       0x78 src/asf/xmega/drivers/usart/usart.o
  .text.usart_spi_set_baudrate
-                0x00000eb8       0x5e src/asf/xmega/drivers/usart/usart.o
-                0x00000eb8                usart_spi_set_baudrate
+                0x00001b6c       0x5e src/asf/xmega/drivers/usart/usart.o
+                0x00001b6c                usart_spi_set_baudrate
  .text.usart_init_spi
-                0x00000f16       0xd6 src/asf/xmega/drivers/usart/usart.o
-                0x00000f16                usart_init_spi
+                0x00001bca       0xd6 src/asf/xmega/drivers/usart/usart.o
+                0x00001bca                usart_init_spi
  .text.ioport_set_value
-                0x00000fec       0x48 src/main.o
- .text.ioport_pin_is_low
-                0x00001034       0x40 src/main.o
+                0x00001ca0       0x48 src/main.o
  .text.st7565r_write_command
-                0x00001074       0x3a src/main.o
+                0x00001ce8       0x3a src/main.o
  .text.adc_handler
-                0x000010ae       0x26 src/main.o
- .text.clear_lcd
-                0x000010d4       0x18 src/main.o
+                0x00001d22       0x26 src/main.o
  .text.update_graph_display
-                0x000010ec       0x44 src/main.o
-                0x000010ec                update_graph_display
- .text.set_mode
-                0x00001130       0x24 src/main.o
-                0x00001130                set_mode
- .text.main     0x00001154       0xb4 src/main.o
-                0x00001154                main
- .text.libgcc   0x00001208       0x44 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_udivmodsi4.o)
-                0x00001208                __udivmodsi4
-                0x0000124c                . = ALIGN (0x2)
+                0x00001d48       0x3c src/main.o
+                0x00001d48                update_graph_display
+ .text.main     0x00001d84       0xb6 src/main.o
+                0x00001d84                main
+ .text.libgcc   0x00001e3a       0x44 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_udivmodsi4.o)
+                0x00001e3a                __udivmodsi4
+                0x00001e7e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000124c        0x0 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_exit.o)
-                0x0000124c                _exit
-                0x0000124c                exit
+ .fini9         0x00001e7e        0x0 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_exit.o)
+                0x00001e7e                _exit
+                0x00001e7e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -687,11 +770,11 @@ LOAD c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000124c        0x4 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_exit.o)
+ .fini0         0x00001e7e        0x4 c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avrxmega6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001250                _etext = .
+                0x00001e82                _etext = .
 
-.data           0x00802000        0x0 load address 0x00001250
+.data           0x00802000        0x0 load address 0x00001e82
                 0x00802000                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -702,7 +785,7 @@ LOAD c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.
                 0x00802000                _edata = .
                 0x00802000                PROVIDE (__data_end, .)
 
-.bss            0x00802000      0x21b
+.bss            0x00802000      0x262
                 0x00802000                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -718,27 +801,98 @@ LOAD c:/program files/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.
                 0x00802206        0x1 src/asf/xmega/drivers/adc/adc.o
  .bss.adcb_enable_count
                 0x00802207        0x1 src/asf/xmega/drivers/adc/adc.o
- .bss.mode      0x00802208        0x1 src/main.o
+ .bss.tc_tcc0_ccd_callback
+                0x00802208        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd0_ccd_callback
+                0x0080220a        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce0_ccd_callback
+                0x0080220c        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcf0_ccd_callback
+                0x0080220e        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc0_ccc_callback
+                0x00802210        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd0_ccc_callback
+                0x00802212        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce0_ccc_callback
+                0x00802214        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcf0_ccc_callback
+                0x00802216        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc0_ccb_callback
+                0x00802218        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc1_ccb_callback
+                0x0080221a        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd0_ccb_callback
+                0x0080221c        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd1_ccb_callback
+                0x0080221e        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce0_ccb_callback
+                0x00802220        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce1_ccb_callback
+                0x00802222        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcf0_ccb_callback
+                0x00802224        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc0_cca_callback
+                0x00802226        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc1_cca_callback
+                0x00802228        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd0_cca_callback
+                0x0080222a        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd1_cca_callback
+                0x0080222c        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce0_cca_callback
+                0x0080222e        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce1_cca_callback
+                0x00802230        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcf0_cca_callback
+                0x00802232        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc0_err_callback
+                0x00802234        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc1_err_callback
+                0x00802236        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd0_err_callback
+                0x00802238        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd1_err_callback
+                0x0080223a        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce0_err_callback
+                0x0080223c        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce1_err_callback
+                0x0080223e        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcf0_err_callback
+                0x00802240        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc0_ovf_callback
+                0x00802242        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcc1_ovf_callback
+                0x00802244        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd0_ovf_callback
+                0x00802246        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcd1_ovf_callback
+                0x00802248        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce0_ovf_callback
+                0x0080224a        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tce1_ovf_callback
+                0x0080224c        0x2 src/asf/xmega/drivers/tc/tc.o
+ .bss.tc_tcf0_ovf_callback
+                0x0080224e        0x2 src/asf/xmega/drivers/tc/tc.o
  .bss.adc_config
-                0x00802209        0x7 src/main.o
+                0x00802250        0x7 src/main.o
  .bss.adcch_config
-                0x00802210        0x3 src/main.o
+                0x00802257        0x3 src/main.o
  .bss.scaled_light_reading
-                0x00802213        0x1 src/main.o
- .bss.x         0x00802214        0x1 src/main.o
+                0x0080225a        0x1 src/main.o
+ .bss.x         0x0080225b        0x1 src/main.o
  *(COMMON)
- COMMON         0x00802215        0x6 src/asf/common/services/sleepmgr/xmega/sleepmgr.o
-                0x00802215                sleepmgr_locks
-                0x0080221b                PROVIDE (__bss_end, .)
-                0x00001250                __data_load_start = LOADADDR (.data)
-                0x00001250                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080225c        0x6 src/asf/common/services/sleepmgr/xmega/sleepmgr.o
+                0x0080225c                sleepmgr_locks
+                0x00802262                PROVIDE (__bss_end, .)
+                0x00001e82                __data_load_start = LOADADDR (.data)
+                0x00001e82                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080221b        0x0
-                0x0080221b                PROVIDE (__noinit_start, .)
+.noinit         0x00802262        0x0
+                0x00802262                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080221b                PROVIDE (__noinit_end, .)
-                0x0080221b                _end = .
-                0x0080221b                PROVIDE (__heap_start, .)
+                0x00802262                PROVIDE (__noinit_end, .)
+                0x00802262                _end = .
+                0x00802262                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)

@@ -32,6 +32,8 @@ src\asf\xmega\drivers\nvm\nvm.c
 
 src\asf\xmega\drivers\nvm\nvm_asm.s
 
+src\asf\xmega\drivers\tc\tc.c
+
 src\asf\xmega\drivers\usart\usart.c
 
 src\main.c
