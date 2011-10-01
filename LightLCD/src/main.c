@@ -56,13 +56,24 @@ static void setup_lcd(void);
 static void setup_adc(void);
 static void update_graph_display(void);
 
-
+/**
+ * \internal
+ * \brief Handler for ADC conversion result
+ *
+ * Callback function for for when an ADC conversion is ready
+ * In this handler we create a scaled light reading according
+ * to the height of the LCD screen
+ */
 static void adc_handler(ADC_t *adc, uint8_t ch_mask, adc_result_t result)
 {
     scaled_light_reading = GFX_MONO_LCD_HEIGHT - (result / SCALED_LCD_HEIGHT);
     adc_start_conversion(adc, ch_mask);
 }
 
+/**
+ * \internal
+ * \brief Initialize the LCD display
+ */
 static void setup_lcd(void)
 {
     gfx_mono_init();
@@ -70,6 +81,10 @@ static void setup_lcd(void)
     st7565r_set_contrast(ST7565R_DISPLAY_CONTRAST_MIN);
 }
 
+/**
+ * \internal
+ * \brief Initialize the ADC
+ */
 static void setup_adc(void)
 {	
     adc_read_configuration(&ADCA, &adc_config);
@@ -89,6 +104,10 @@ static void setup_adc(void)
     adcch_write_configuration(&ADCA, ADC_CH0, &adcch_config);	
 }
 
+/**
+ * \internal
+ * \brief Updates the display with the scaled lcd reading
+ */
 static void update_graph_display(void)
 {
     // Clear just ahead of the pixel position
@@ -97,6 +116,7 @@ static void update_graph_display(void)
     // Draw the pixel 
     gfx_mono_draw_pixel(x, scaled_light_reading, GFX_PIXEL_SET);
     
+    // Update the x-axis position, move to LHS when at RHS of display
     x = (x >=  GFX_MONO_LCD_WIDTH) ? 0 : ++x;
 }
 
@@ -112,10 +132,12 @@ int main(void)
     setup_lcd();
     setup_adc();
 
+    // Enable the ADC and start converting
     adc_enable(&ADCA);
     adc_start_conversion(&ADCA, ADC_CH0);
 		
-    while (1) 
+    // Main loop
+    for(;;)
     {
         update_graph_display();
     }    	
